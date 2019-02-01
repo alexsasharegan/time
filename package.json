@@ -1,0 +1,42 @@
+{
+	"name": "@alexsasharegan/time",
+	"version": "1.0.0",
+	"description": "",
+	"main": "lib/time.js",
+	"module": "esm/time.js",
+	"types": "lib/time.d.ts",
+	"scripts": {
+		"prebuild": "rm -Rf lib esm",
+		"build:docs": "typedoc --options typedoc.js",
+		"build:esm": "tsc -p tsconfig.esm.json",
+		"build:cjs": "tsc -p tsconfig.json",
+		"build": "npm run build:cjs && npm run build:esm",
+		"prepublishOnly": "npm run build",
+		"release": "standard-version",
+		"postrelease": "git push --follow-tags origin master && npm publish --access public",
+		"test": "jest -v"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alexsasharegan/time.git"
+	},
+	"author": "Alex Regan <alex.joseph.regan@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/alexsasharegan/time/issues"
+	},
+	"homepage": "https://github.com/alexsasharegan/time#readme",
+	"dependencies": {
+		"prettier": "^1.16.1",
+		"safe-types": "^4.12.1"
+	},
+	"devDependencies": {
+		"@types/jest": "^23.3.13",
+		"babel-jest": "^23.6.0",
+		"jest": "^23.6.0",
+		"standard-version": "^4.4.0",
+		"ts-jest": "^23.10.5",
+		"ts-node": "^8.0.1",
+		"typescript": "^3.2.4"
+	}
+}

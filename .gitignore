@@ -1,0 +1,11 @@
+.*
+!.gitignore
+!.gitkeep
+!.prettierrc
+
+node_modules
+tmp
+lib
+esm
+dist
+coverage
